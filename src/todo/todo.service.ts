@@ -69,6 +69,7 @@ export class TodoService {
 
     if (!task || task.userId !== userId)
       throw new ForbiddenException('No permission to delete');
+    
 
     await this.prisma.task.delete({
       where: {
